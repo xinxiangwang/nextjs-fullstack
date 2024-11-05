@@ -1,10 +1,10 @@
-import { withAuth } from "next-auth/middleware"
+import { withAuth } from 'next-auth/middleware'
 
 export default withAuth({
   // Matches the pages config in `[...nextauth]`
   pages: {
-    signIn: "/admin/login",
+    signIn: '/admin/login',
   },
 })
 
-export const config = { matcher: ["/admin/page/:path*"] }
+export const config = { matcher: ['/admin/views/:path*'] }

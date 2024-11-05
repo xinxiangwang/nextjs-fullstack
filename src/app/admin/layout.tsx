@@ -1,14 +1,18 @@
 'use client'
-import React from 'react';
-import { ConfigProvider } from 'antd';
+import { AntdRegistry } from '@ant-design/nextjs-registry'
+import { ConfigProvider, theme } from 'antd'
+import React from 'react'
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <ConfigProvider theme={{ token: { colorPrimary: '#00b96b' } }}>
-      <div className='w-[100vw] h-[100vh]'>{children}</div>
-    </ConfigProvider>
+    <AntdRegistry>
+      <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
+        <div className="w-[100vw] h-[100vh]">{children}</div>
+      </ConfigProvider>
+    </AntdRegistry>
   )
 }
